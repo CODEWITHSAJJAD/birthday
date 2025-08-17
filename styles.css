@@ -199,7 +199,7 @@ p {
 
 .nicknames {
     display: flex;
-    justify-content: center;
+    justify-content: left;
     flex-wrap: wrap;
     gap: 0.8rem;
     margin-bottom: 1.5rem;
@@ -414,7 +414,7 @@ p {
 
 .gallery-container {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(1, 1fr);
     gap: 1rem;
     max-width: 1000px;
     margin: 0 auto;
