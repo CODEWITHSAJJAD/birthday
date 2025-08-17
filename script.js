@@ -28,6 +28,42 @@ document.addEventListener('DOMContentLoaded', function() {
         createFloatingHearts();
     }, 2000);
 
+    // Gallery Preview Functionality
+    const galleryItems = document.querySelectorAll('.gallery-item');
+    const previewModal = document.createElement('div');
+    previewModal.className = 'preview-modal';
+    previewModal.innerHTML = `
+        <div class="preview-content">
+            <span class="close-preview">&times;</span>
+            <img src="" alt="Preview">
+        </div>
+    `;
+    document.body.appendChild(previewModal);
+    
+    const closePreview = previewModal.querySelector('.close-preview');
+    const previewImg = previewModal.querySelector('img');
+    
+    galleryItems.forEach(item => {
+        item.addEventListener('click', function() {
+            const imgSrc = this.querySelector('img').src;
+            previewImg.src = imgSrc;
+            previewModal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        });
+    });
+    
+    closePreview.addEventListener('click', function() {
+        previewModal.classList.remove('active');
+        document.body.style.overflow = '';
+    });
+    
+    previewModal.addEventListener('click', function(e) {
+        if (e.target === previewModal) {
+            previewModal.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+    });
+
     // Navigation functionality
     const coverScreen = document.querySelector('.cover-screen');
     const journeySection = document.querySelector('.journey-section');
@@ -101,23 +137,64 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
-    // Countup animation
+    // Countup animation with real-time values
     function startCountUp() {
+        const meetingDate = new Date('December 25, 2023 00:00:00');
         const counters = document.querySelectorAll('.count');
-        const speed = 200;
         
-        counters.forEach(counter => {
-            const target = +counter.getAttribute('data-target');
-            const count = +counter.innerText;
-            const increment = target / speed;
+        function updateAllCounters() {
+            const now = new Date();
+            const diffTime = Math.abs(now - meetingDate);
             
-            if (count < target) {
-                counter.innerText = Math.ceil(count + increment);
-                setTimeout(startCountUp, 1);
-            } else {
-                counter.innerText = target.toLocaleString();
-            }
+            // Update days
+            const days = Math.floor(diffTime / (1000 * 60 * 60 * 24));
+            counters[0].innerText = days.toLocaleString();
+            
+            // Update hours
+            const hours = Math.floor(diffTime / (1000 * 60 * 60));
+            counters[1].innerText = hours.toLocaleString();
+            
+            // Update minutes
+            const minutes = Math.floor(diffTime / (1000 * 60));
+            counters[2].innerText = minutes.toLocaleString();
+            
+            // Update seconds
+            const seconds = Math.floor(diffTime / 1000);
+            counters[3].innerText = seconds.toLocaleString();
+        }
+        
+        // Initial animation
+        const duration = 1500; // 1.5 seconds for animation
+        const steps = 15;
+        const stepTime = duration / steps;
+        
+        updateAllCounters(); // Get current values
+        const finalValues = Array.from(counters).map(c => parseInt(c.innerText.replace(/,/g, '')));
+        
+        // Reset to 0 for animation
+        counters.forEach(c => c.innerText = '0');
+        
+        // Animate each counter
+        counters.forEach((counter, index) => {
+            let current = 0;
+            const increment = finalValues[index] / steps;
+            
+            const timer = setInterval(() => {
+                current += increment;
+                if (current >= finalValues[index]) {
+                    clearInterval(timer);
+                    counter.innerText = finalValues[index].toLocaleString();
+                } else {
+                    counter.innerText = Math.floor(current).toLocaleString();
+                }
+            }, stepTime);
         });
+        
+        // Start real-time updates after animation
+        setTimeout(() => {
+            updateAllCounters();
+            setInterval(updateAllCounters, 1000);
+        }, duration);
     }
     
     // Create floating hearts
