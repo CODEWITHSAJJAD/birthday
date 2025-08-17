@@ -33,7 +33,7 @@ body {
 .container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 2rem;
+    padding: 1rem;
     position: relative;
     min-height: 100vh;
 }
@@ -44,7 +44,7 @@ section {
     left: 0;
     width: 100%;
     height: 100%;
-    padding: 2rem;
+    padding: 1rem;
     opacity: 0;
     pointer-events: none;
     transition: var(--transition);
@@ -61,19 +61,19 @@ h1, h2, h3 {
 }
 
 h1 {
-    font-size: 3rem;
+    font-size: 2rem;
     margin-bottom: 1rem;
 }
 
 h2 {
-    font-size: 2.5rem;
+    font-size: 1.8rem;
     text-align: center;
-    margin-bottom: 2rem;
+    margin-bottom: 1.5rem;
     color: var(--dark);
 }
 
 h3 {
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     margin-bottom: 0.5rem;
     color: var(--primary);
 }
@@ -81,6 +81,7 @@ h3 {
 p {
     line-height: 1.6;
     margin-bottom: 1rem;
+    font-size: 0.95rem;
 }
 
 /* Loader */
@@ -104,8 +105,8 @@ p {
 }
 
 .heart {
-    width: 100px;
-    height: 100px;
+    width: 80px;
+    height: 80px;
     background-color: var(--primary);
     transform: rotate(45deg);
     animation: heartbeat 1.4s linear infinite;
@@ -114,39 +115,29 @@ p {
 
 .heart:before, .heart:after {
     content: '';
-    width: 100px;
-    height: 100px;
+    width: 80px;
+    height: 80px;
     background-color: var(--primary);
     border-radius: 50%;
     position: absolute;
 }
 
 .heart:before {
-    top: -50px;
+    top: -40px;
     left: 0;
 }
 
 .heart:after {
     top: 0;
-    left: -50px;
+    left: -40px;
 }
 
 @keyframes heartbeat {
-    0% {
-        transform: rotate(45deg) scale(1);
-    }
-    25% {
-        transform: rotate(45deg) scale(1.1);
-    }
-    50% {
-        transform: rotate(45deg) scale(1);
-    }
-    75% {
-        transform: rotate(45deg) scale(1.1);
-    }
-    100% {
-        transform: rotate(45deg) scale(1);
-    }
+    0% { transform: rotate(45deg) scale(1); }
+    25% { transform: rotate(45deg) scale(1.1); }
+    50% { transform: rotate(45deg) scale(1); }
+    75% { transform: rotate(45deg) scale(1.1); }
+    100% { transform: rotate(45deg) scale(1); }
 }
 
 /* Main Screen */
@@ -157,16 +148,18 @@ p {
     justify-content: center;
     text-align: center;
     background: linear-gradient(135deg, #f5f7fa 0%, #ffeef8 100%);
-    border-radius: 20px;
-    padding: 2rem;
+    border-radius: 15px;
+    padding: 1.5rem;
     box-shadow: var(--shadow);
+    height: calc(100% - 2rem);
+    margin: 1rem 0;
 }
 
 .profile-pic {
     position: relative;
-    width: 200px;
-    height: 200px;
-    margin-bottom: 1.5rem;
+    width: 150px;
+    height: 150px;
+    margin-bottom: 1rem;
 }
 
 .profile-pic img {
@@ -174,7 +167,7 @@ p {
     height: 100%;
     object-fit: cover;
     border-radius: 50%;
-    border: 5px solid white;
+    border: 4px solid white;
     box-shadow: var(--shadow);
     position: relative;
     z-index: 2;
@@ -187,10 +180,10 @@ p {
 
 .decoration {
     position: absolute;
-    top: -10px;
-    left: -10px;
-    right: -10px;
-    bottom: -10px;
+    top: -8px;
+    left: -8px;
+    right: -8px;
+    bottom: -8px;
     border: 2px dashed var(--primary);
     border-radius: 50%;
     z-index: 1;
@@ -201,38 +194,39 @@ p {
     font-family: 'Dancing Script', cursive;
     color: var(--dark);
     margin-bottom: 1rem;
-    font-size: 2.5rem;
+    font-size: 2rem;
 }
 
 .nicknames {
     display: flex;
-    justify-content: left;
-    gap: 1rem;
-    margin-bottom: 2rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+    margin-bottom: 1.5rem;
 }
 
 .nicknames span {
     background-color: var(--primary);
     color: white;
-    padding: 0.5rem 1rem;
+    padding: 0.4rem 0.8rem;
     border-radius: 50px;
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     box-shadow: var(--shadow);
 }
 
 .main-buttons {
     display: flex;
     flex-direction: column;
-    gap: 1rem;
+    gap: 0.8rem;
     width: 100%;
-    max-width: 300px;
+    max-width: 280px;
 }
 
 .btn {
-    padding: 1rem 1.5rem;
+    padding: 0.9rem 1.2rem;
     border: none;
     border-radius: 50px;
-    font-size: 1rem;
+    font-size: 0.95rem;
     font-weight: 600;
     cursor: pointer;
     transition: var(--transition);
@@ -287,7 +281,7 @@ p {
 }
 
 .music-control {
-    margin-top: 2rem;
+    margin-top: 1.5rem;
 }
 
 .music-btn {
@@ -296,7 +290,7 @@ p {
     color: var(--primary);
     padding: 0.5rem 1rem;
     border-radius: 50px;
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     cursor: pointer;
     transition: var(--transition);
     display: flex;
@@ -311,7 +305,7 @@ p {
 
 /* Back Button */
 .back-btn {
-    position: absolute;
+    position: fixed;
     top: 1rem;
     left: 1rem;
     background-color: var(--primary);
@@ -334,25 +328,22 @@ p {
 
 /* Journey Section */
 .journey-section {
-    /* background: linear-gradient(135deg, #f5f7fa 0%, #f0f8ff 100%); */
-    
-    padding-top: 4rem;
-    
+    padding-top: 3.5rem;
+    padding-bottom: 1rem;
 }
 
 .timeline {
     position: relative;
     max-width: 800px;
     margin: 0 auto;
-    padding: 20px 0;
+    padding: 15px 0;
 }
 
 .timeline:before {
     content: '';
     position: absolute;
     top: 0;
-    left: 50%;
-    transform: translateX(-50%);
+    left: 20px;
     width: 2px;
     height: 100%;
     background-color: var(--primary);
@@ -361,12 +352,13 @@ p {
 .timeline-item {
     display: flex;
     justify-content: flex-end;
-    padding-right: 30px;
+    padding-right: 0;
+    padding-left: 50px;
     position: relative;
-    margin: 40px 0;
-    width: 50%;
+    margin: 30px 0;
+    width: 100%;
     opacity: 0;
-    transform: translateX(50px);
+    transform: translateX(20px);
     transition: all 0.5s ease;
 }
 
@@ -375,36 +367,24 @@ p {
     transform: translateX(0);
 }
 
-.timeline-item:nth-child(odd) {
-    align-self: flex-end;
-    justify-content: flex-start;
-    padding-left: 30px;
-    padding-right: 0;
-}
-
 .timeline-date {
     position: absolute;
-    top: 0;
+    top: -15px;
     left: 0;
     background-color: var(--primary);
     color: white;
-    padding: 0.5rem 1rem;
+    padding: 0.4rem 0.8rem;
     border-radius: 50px;
-    font-size: 0.9rem;
+    font-size: 0.8rem;
     box-shadow: var(--shadow);
-}
-
-.timeline-item:nth-child(odd) .timeline-date {
-    left: auto;
-    right: 0;
 }
 
 .timeline-content {
     background-color: white;
-    padding: 1.5rem;
+    padding: 1.2rem;
     border-radius: 10px;
     box-shadow: var(--shadow);
-    width: calc(100% - 60px);
+    width: 100%;
     transition: var(--transition);
 }
 
@@ -416,48 +396,41 @@ p {
 .timeline-item:after {
     content: '';
     position: absolute;
-    width: 20px;
-    height: 20px;
-    right: -10px;
+    width: 16px;
+    height: 16px;
+    left: 12px;
     background-color: var(--light);
-    border: 4px solid var(--primary);
+    border: 3px solid var(--primary);
     top: 20px;
     border-radius: 50%;
     z-index: 1;
 }
 
-.timeline-item:nth-child(odd):after {
-    right: auto;
-    left: -10px;
-}
-
 /* Moments Section */
 .moments-section {
-    /* background: linear-gradient(135deg, #f5f7fa 0%, #fff0f5 100%); */
-    border-radius: 20px;
-    padding-top: 4rem;
-    padding-bottom: 2rem;
+    padding-top: 3.5rem;
+    padding-bottom: 1rem;
 }
 
 .gallery-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 1.5rem;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
     max-width: 1000px;
     margin: 0 auto;
-    padding: 1rem;
+    padding: 0.5rem;
 }
 
 .gallery-item {
     overflow: hidden;
-    border-radius: 15px;
+    border-radius: 12px;
     box-shadow: var(--shadow);
     position: relative;
     opacity: 0;
-    transform: scale(0.8);
+    transform: scale(0.9);
     transition: all 0.5s ease;
-    aspect-ratio: 4 / 3; /* Optional: Enforce consistent aspect ratio */
-    background: #fff; /* Prevent layout shift */
+    aspect-ratio: 1/1;
+    background: #fff;
 }
 
 .gallery-item.visible {
@@ -468,17 +441,14 @@ p {
 .gallery-item img {
     width: 100%;
     height: 100%;
-    object-fit: contain; /* 🔥 Shows full image, no cropping */
-    background: #f0f0f0; /* Optional: subtle bg if image has transparency */
+    object-fit: cover;
     transition: transform 0.4s ease;
 }
 
-/* Zoom image slightly on hover */
 .gallery-item:hover img {
     transform: scale(1.05);
 }
 
-/* Overlay with heart */
 .gallery-item .overlay {
     position: absolute;
     top: 0;
@@ -498,7 +468,7 @@ p {
 }
 
 .heart-icon {
-    font-size: 3rem;
+    font-size: 2.5rem;
     color: white;
     animation: pulse 1.5s infinite;
 }
@@ -509,16 +479,15 @@ p {
     100% { transform: scale(1); }
 }
 
-/* Date Label */
 .moment-date {
     position: absolute;
-    bottom: 10px;
-    left: 10px;
+    bottom: 8px;
+    left: 8px;
     background-color: rgba(0, 0, 0, 0.6);
     color: white;
-    padding: 5px 10px;
-    border-radius: 8px;
-    font-size: 0.85rem;
+    padding: 4px 8px;
+    border-radius: 6px;
+    font-size: 0.75rem;
     font-weight: bold;
     z-index: 2;
     opacity: 0;
@@ -528,27 +497,27 @@ p {
 .gallery-item:hover .moment-date {
     opacity: 1;
 }
+
 /* Message Section */
 .message-section {
-    /* background: linear-gradient(135deg, #f5f7fa 0%, #f0fff4 100%); */
-    border-radius: 20px;
-    padding-top: 4rem;
+    padding-top: 3.5rem;
+    padding-bottom: 1rem;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
 }
 
 .message-content {
     background-color: white;
-    padding: 2rem;
-    border-radius: 15px;
+    padding: 1.5rem;
+    border-radius: 12px;
     box-shadow: var(--shadow);
-    max-width: 800px;
-    margin: 0 auto 2rem;
+    width: 100%;
+    margin: 0 auto 1.5rem;
     position: relative;
     opacity: 0;
-    transform: translateY(50px);
+    transform: translateY(30px);
     transition: all 0.5s ease 0.2s;
 }
 
@@ -560,9 +529,9 @@ p {
 .message-content:before {
     content: '"';
     position: absolute;
-    top: -30px;
-    left: 20px;
-    font-size: 6rem;
+    top: -20px;
+    left: 10px;
+    font-size: 4rem;
     color: var(--secondary);
     font-family: serif;
     line-height: 1;
@@ -572,18 +541,18 @@ p {
 .signature {
     text-align: right;
     font-style: italic;
-    margin-top: 2rem;
+    margin-top: 1.5rem;
     font-weight: 600;
 }
 
 .countup {
     display: flex;
     justify-content: center;
-    gap: 1.5rem;
-    margin-bottom: 1rem;
     flex-wrap: wrap;
+    gap: 0.8rem;
+    margin-bottom: 1rem;
     opacity: 0;
-    transform: translateY(50px);
+    transform: translateY(30px);
     transition: all 0.5s ease 0.4s;
 }
 
@@ -594,10 +563,10 @@ p {
 
 .countup-item {
     background-color: white;
-    padding: 1rem 1.5rem;
-    border-radius: 10px;
+    padding: 0.8rem 1rem;
+    border-radius: 8px;
     box-shadow: var(--shadow);
-    min-width: 100px;
+    min-width: 80px;
     text-align: center;
     transition: var(--transition);
 }
@@ -608,15 +577,15 @@ p {
 }
 
 .countup-item span:first-child {
-    font-size: 1.8rem;
+    font-size: 1.5rem;
     font-weight: 600;
     color: var(--primary);
     display: block;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.3rem;
 }
 
 .countup-item span:last-child {
-    font-size: 0.9rem;
+    font-size: 0.8rem;
     color: var(--text);
 }
 
@@ -625,8 +594,9 @@ p {
     color: var(--primary);
     font-weight: 600;
     opacity: 0;
-    transform: translateY(20px);
+    transform: translateY(15px);
     transition: all 0.5s ease 0.6s;
+    margin-bottom: 1.5rem;
 }
 
 .message-section.active .counting-text {
@@ -650,136 +620,154 @@ p {
     color: var(--primary);
     animation: float-up 4s linear forwards;
     opacity: 0.7;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
 }
 
 @keyframes float-up {
-    0% {
-        transform: translateY(100vh) rotate(0deg);
-        opacity: 0;
-    }
-    10% {
-        opacity: 0.7;
-    }
-    90% {
-        opacity: 0.7;
-    }
-    100% {
-        transform: translateY(-100px) rotate(360deg);
-        opacity: 0;
-    }
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-    .main-screen {
-        padding: 1rem;
-    }
-    
-    .profile-pic {
-        width: 150px;
-        height: 150px;
-    }
-    
-    .title {
-        font-size: 2rem;
-    }
-    
-    h2 {
-        font-size: 1.8rem;
-    }
-    
-    .timeline:before {
-        left: 30px;
-    }
-    
-    .timeline-item {
-        width: 100%;
-        padding-left: 70px;
-        padding-right: 0;
-    }
-    
-    .timeline-item:nth-child(odd) {
-        padding-left: 70px;
-    }
-    
-    .timeline-item:after {
-        left: 20px;
-        right: auto;
-    }
-    
-    .timeline-item:nth-child(odd):after {
-        left: 20px;
-    }
-    
-    .timeline-date {
-        left: 70px;
-        right: auto;
-    }
-    
-    .timeline-item:nth-child(odd) .timeline-date {
-        left: 70px;
-        right: auto;
-    }
-    
-    .gallery-container {
-        grid-template-columns: 1fr;
-    }
-    
-    .countup {
-        gap: 1rem;
-    }
-    
-    .countup-item {
-        min-width: 80px;
-        padding: 0.8rem 1rem;
-    }
-    
-    .countup-item span:first-child {
-        font-size: 1.5rem;
-    }
+    0% { transform: translateY(100vh) rotate(0deg); opacity: 0; }
+    10% { opacity: 0.7; }
+    90% { opacity: 0.7; }
+    100% { transform: translateY(-100px) rotate(360deg); opacity: 0; }
 }
 
 /* Section Transitions */
-.journey-section.active {
-    animation: slideInRight 0.5s ease forwards;
-}
-
-.moments-section.active {
-    animation: slideInLeft 0.5s ease forwards;
-}
-
+.journey-section.active,
+.moments-section.active,
 .message-section.active {
     animation: fadeIn 0.5s ease forwards;
 }
 
-@keyframes slideInRight {
-    from {
-        transform: translateX(100%);
-        opacity: 0;
-    }
-    to {
-        transform: translateX(0);
-        opacity: 1;
-    }
-}
-
-@keyframes slideInLeft {
-    from {
-        transform: translateX(-100%);
-        opacity: 0;
-    }
-    to {
-        transform: translateX(0);
-        opacity: 1;
-    }
-}
-
 @keyframes fadeIn {
-    from {
-        opacity: 0;
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Responsive Adjustments */
+@media (min-width: 576px) {
+    .container {
+        padding: 1.5rem;
     }
-    to {
-        opacity: 1;
+    
+    h1 {
+        font-size: 2.5rem;
+    }
+    
+    h2 {
+        font-size: 2rem;
+    }
+    
+    .profile-pic {
+        width: 180px;
+        height: 180px;
+    }
+    
+    .gallery-container {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    .message-content {
+        padding: 2rem;
+    }
+}
+
+@media (min-width: 768px) {
+    .container {
+        padding: 2rem;
+    }
+    
+    .timeline:before {
+        left: 50%;
+    }
+    
+    .timeline-item {
+        width: 50%;
+        padding-left: 0;
+        padding-right: 30px;
+    }
+    
+    .timeline-item:nth-child(odd) {
+        align-self: flex-end;
+        justify-content: flex-start;
+        padding-left: 30px;
+        padding-right: 0;
+    }
+    
+    .timeline-item:after {
+        left: auto;
+        right: -10px;
+    }
+    
+    .timeline-item:nth-child(odd):after {
+        right: auto;
+        left: -10px;
+    }
+    
+    .timeline-date {
+        position: absolute;
+        top: 0;
+    }
+    
+    .timeline-item:nth-child(odd) .timeline-date {
+        left: auto;
+        right: 0;
+    }
+    
+    .gallery-container {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+@media (min-width: 992px) {
+    h1 {
+        font-size: 3rem;
+    }
+    
+    h2 {
+        font-size: 2.5rem;
+    }
+    
+    .profile-pic {
+        width: 200px;
+        height: 200px;
+    }
+    
+    .main-buttons {
+        max-width: 300px;
+    }
+    
+    .btn {
+        padding: 1rem 1.5rem;
+    }
+}
+
+/* Landscape orientation for mobile */
+@media (max-height: 500px) and (orientation: landscape) {
+    .main-screen {
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        height: auto;
+        padding: 1rem;
+    }
+    
+    .profile-pic {
+        width: 100px;
+        height: 100px;
+        margin-bottom: 0;
+        margin-right: 1rem;
+    }
+    
+    .title {
+        font-size: 1.5rem;
+        margin-bottom: 0.5rem;
+    }
+    
+    .main-buttons {
+        max-width: 200px;
+    }
+    
+    .btn {
+        padding: 0.6rem 1rem;
+        font-size: 0.85rem;
     }
 }
